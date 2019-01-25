@@ -89,5 +89,12 @@ $.fn.lazyload = function(options) {
 
     return this;
 };
+/* Appear effect 本段js引用自kcwiki https://kcwiki.org/wiki/MediaWiki:Common.js */
+$this.one('appear', function(e){ //img on'appear'渐入特效
+    var that = $(this);
+    that.css('opacity',0);
+    setTimeout(function(){that.css('transition','opacity 0.5s').css('opacity',1);}, 0.01);
+});
+/* End of Appear effect */
 
 $('.external-image, img[data-url]').lazyload();
